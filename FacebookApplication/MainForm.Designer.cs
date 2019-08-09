@@ -34,21 +34,31 @@
             this.labelCreditMessage = new System.Windows.Forms.Label();
             this.labelCredit = new System.Windows.Forms.Label();
             this.checkBoxRememberMe = new System.Windows.Forms.CheckBox();
+            this.pictureBoxFacebookLogo = new System.Windows.Forms.PictureBox();
+            this.buttonLoginLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPosts = new System.Windows.Forms.TabPage();
+            this.buttonDeletePost = new System.Windows.Forms.Button();
+            this.buttonShareMyPost = new System.Windows.Forms.Button();
             this.textBoxPost = new System.Windows.Forms.TextBox();
+            this.buttonRefreshPosts = new System.Windows.Forms.Button();
             this.listBoxMyPosts = new System.Windows.Forms.ListBox();
             this.tabPhotos = new System.Windows.Forms.TabPage();
             this.labelPhotoDescription = new System.Windows.Forms.Label();
             this.labelPreview = new System.Windows.Forms.Label();
             this.labelPhoto = new System.Windows.Forms.Label();
+            this.buttonUploadPhoto = new System.Windows.Forms.Button();
+            this.buttonCreateAlbum = new System.Windows.Forms.Button();
+            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.listBoxPhoto = new System.Windows.Forms.ListBox();
             this.labelAlbum = new System.Windows.Forms.Label();
+            this.buttonRefreshAlbums = new System.Windows.Forms.Button();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
             this.tabFriends = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelFriendLastNameInfo = new System.Windows.Forms.Label();
+            this.pictureBoxFriendPicture = new System.Windows.Forms.PictureBox();
             this.labelFriendFirstNameInfo = new System.Windows.Forms.Label();
             this.labelFriendGenderInfo = new System.Windows.Forms.Label();
             this.labelFriendGender = new System.Windows.Forms.Label();
@@ -56,18 +66,34 @@
             this.labelFriendLastName = new System.Windows.Forms.Label();
             this.labelSelectedFriendInformation = new System.Windows.Forms.Label();
             this.labelFriendsList = new System.Windows.Forms.Label();
+            this.buttonRefreshFriends = new System.Windows.Forms.Button();
             this.listBoxFriends = new System.Windows.Forms.ListBox();
             this.tabPageLikes = new System.Windows.Forms.TabPage();
+            this.pictureBoxPages = new System.Windows.Forms.PictureBox();
+            this.buttonRefreshPages = new System.Windows.Forms.Button();
             this.listBoxPages = new System.Windows.Forms.ListBox();
             this.tabEvents = new System.Windows.Forms.TabPage();
+            this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
+            this.buttonLoadEvents = new System.Windows.Forms.Button();
             this.listBoxMyEvents = new System.Windows.Forms.ListBox();
             this.tabYourActivity = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.labelYourActivityTitle = new System.Windows.Forms.Label();
-            this.tabKnowYourFriends = new System.Windows.Forms.TabPage();
-            this.labelNumberOfConnectedFriendsInfo = new System.Windows.Forms.Label();
-            this.labelNumberOfConnectedFriends = new System.Windows.Forms.Label();
-            this.listBoxKnowYourFriends = new System.Windows.Forms.ListBox();
-            this.buttonKnowYourFriends = new System.Windows.Forms.Button();
+            this.tabTopLikedPhotos = new System.Windows.Forms.TabPage();
+            this.textBoxLikes2 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes3 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes4 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes5 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes6 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes1 = new System.Windows.Forms.TextBox();
+            this.buttonGetTop = new System.Windows.Forms.Button();
+            this.pictureBoxTop6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop1 = new System.Windows.Forms.PictureBox();
             this.labelGenderInfo = new System.Windows.Forms.Label();
             this.labelBirthdayInfo = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
@@ -82,43 +108,30 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBoxProfilePic = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFacebookLogo = new System.Windows.Forms.PictureBox();
-            this.buttonLoginLogout = new System.Windows.Forms.Button();
-            this.buttonDeletePost = new System.Windows.Forms.Button();
-            this.buttonShareMyPost = new System.Windows.Forms.Button();
-            this.buttonRefreshPosts = new System.Windows.Forms.Button();
-            this.buttonUploadPhoto = new System.Windows.Forms.Button();
-            this.buttonCreateAlbum = new System.Windows.Forms.Button();
-            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
-            this.buttonRefreshAlbums = new System.Windows.Forms.Button();
-            this.pictureBoxFriendPicture = new System.Windows.Forms.PictureBox();
-            this.buttonRefreshFriends = new System.Windows.Forms.Button();
-            this.pictureBoxPages = new System.Windows.Forms.PictureBox();
-            this.buttonRefreshPages = new System.Windows.Forms.Button();
-            this.pictureBoxCalendar = new System.Windows.Forms.PictureBox();
-            this.buttonLoadEvents = new System.Windows.Forms.Button();
-            this.pictureBoxConnectedFriends = new System.Windows.Forms.PictureBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFacebookLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPosts.SuspendLayout();
             this.tabPhotos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.tabFriends.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPicture)).BeginInit();
             this.tabPageLikes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPages)).BeginInit();
             this.tabEvents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
             this.tabYourActivity.SuspendLayout();
-            this.tabKnowYourFriends.SuspendLayout();
+            this.tabTopLikedPhotos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFacebookLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPages)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConnectedFriends)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,7 +170,6 @@
             this.labelCredit.Size = new System.Drawing.Size(96, 12);
             this.labelCredit.TabIndex = 15;
             this.labelCredit.Text = "Elior Paz & Natanel Mor";
-            this.labelCredit.Click += new System.EventHandler(this.labelCredit_Click);
             // 
             // checkBoxRememberMe
             // 
@@ -169,6 +181,31 @@
             this.checkBoxRememberMe.Text = "Remember Me";
             this.checkBoxRememberMe.UseVisualStyleBackColor = true;
             this.checkBoxRememberMe.CheckedChanged += new System.EventHandler(this.checkBoxRememberMe_CheckedChanged);
+            // 
+            // pictureBoxFacebookLogo
+            // 
+            this.pictureBoxFacebookLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFacebookLogo.Image")));
+            this.pictureBoxFacebookLogo.Location = new System.Drawing.Point(8, 8);
+            this.pictureBoxFacebookLogo.Name = "pictureBoxFacebookLogo";
+            this.pictureBoxFacebookLogo.Size = new System.Drawing.Size(129, 133);
+            this.pictureBoxFacebookLogo.TabIndex = 14;
+            this.pictureBoxFacebookLogo.TabStop = false;
+            // 
+            // buttonLoginLogout
+            // 
+            this.buttonLoginLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonLoginLogout.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonLoginLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLoginLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoginLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonLoginLogout.Location = new System.Drawing.Point(6, 147);
+            this.buttonLoginLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLoginLogout.Name = "buttonLoginLogout";
+            this.buttonLoginLogout.Size = new System.Drawing.Size(131, 35);
+            this.buttonLoginLogout.TabIndex = 0;
+            this.buttonLoginLogout.Text = "Login";
+            this.buttonLoginLogout.UseVisualStyleBackColor = false;
+            this.buttonLoginLogout.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // panel2
             // 
@@ -187,7 +224,7 @@
             this.tabControl.Controls.Add(this.tabPageLikes);
             this.tabControl.Controls.Add(this.tabEvents);
             this.tabControl.Controls.Add(this.tabYourActivity);
-            this.tabControl.Controls.Add(this.tabKnowYourFriends);
+            this.tabControl.Controls.Add(this.tabTopLikedPhotos);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Margin = new System.Windows.Forms.Padding(2);
@@ -212,6 +249,37 @@
             this.tabPosts.TabIndex = 1;
             this.tabPosts.Text = "Posts";
             // 
+            // buttonDeletePost
+            // 
+            this.buttonDeletePost.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonDeletePost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDeletePost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeletePost.Enabled = false;
+            this.buttonDeletePost.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonDeletePost.Location = new System.Drawing.Point(546, 285);
+            this.buttonDeletePost.Name = "buttonDeletePost";
+            this.buttonDeletePost.Size = new System.Drawing.Size(123, 31);
+            this.buttonDeletePost.TabIndex = 4;
+            this.buttonDeletePost.Text = "Delete Selected Post";
+            this.buttonDeletePost.UseVisualStyleBackColor = true;
+            this.buttonDeletePost.Click += new System.EventHandler(this.buttonDeletePost_Click);
+            // 
+            // buttonShareMyPost
+            // 
+            this.buttonShareMyPost.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonShareMyPost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonShareMyPost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonShareMyPost.Enabled = false;
+            this.buttonShareMyPost.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonShareMyPost.Location = new System.Drawing.Point(588, 4);
+            this.buttonShareMyPost.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonShareMyPost.Name = "buttonShareMyPost";
+            this.buttonShareMyPost.Size = new System.Drawing.Size(81, 37);
+            this.buttonShareMyPost.TabIndex = 3;
+            this.buttonShareMyPost.Text = "Share Post";
+            this.buttonShareMyPost.UseVisualStyleBackColor = true;
+            this.buttonShareMyPost.Click += new System.EventHandler(this.buttonShareMyPost_Click);
+            // 
             // textBoxPost
             // 
             this.textBoxPost.Location = new System.Drawing.Point(6, 4);
@@ -220,6 +288,23 @@
             this.textBoxPost.Name = "textBoxPost";
             this.textBoxPost.Size = new System.Drawing.Size(568, 60);
             this.textBoxPost.TabIndex = 2;
+            // 
+            // buttonRefreshPosts
+            // 
+            this.buttonRefreshPosts.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonRefreshPosts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRefreshPosts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRefreshPosts.Enabled = false;
+            this.buttonRefreshPosts.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonRefreshPosts.Location = new System.Drawing.Point(6, 285);
+            this.buttonRefreshPosts.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRefreshPosts.Name = "buttonRefreshPosts";
+            this.buttonRefreshPosts.Size = new System.Drawing.Size(101, 31);
+            this.buttonRefreshPosts.TabIndex = 1;
+            this.buttonRefreshPosts.Text = "Refresh Posts";
+            this.buttonRefreshPosts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonRefreshPosts.UseVisualStyleBackColor = true;
+            this.buttonRefreshPosts.Click += new System.EventHandler(this.buttonRefreshPosts_Click);
             // 
             // listBoxMyPosts
             // 
@@ -279,6 +364,48 @@
             this.labelPhoto.TabIndex = 4;
             this.labelPhoto.Text = "Photos";
             // 
+            // buttonUploadPhoto
+            // 
+            this.buttonUploadPhoto.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonUploadPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUploadPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUploadPhoto.Enabled = false;
+            this.buttonUploadPhoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonUploadPhoto.Location = new System.Drawing.Point(7, 292);
+            this.buttonUploadPhoto.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUploadPhoto.Name = "buttonUploadPhoto";
+            this.buttonUploadPhoto.Size = new System.Drawing.Size(186, 32);
+            this.buttonUploadPhoto.TabIndex = 9;
+            this.buttonUploadPhoto.Text = "Upload A Photo To Album";
+            this.buttonUploadPhoto.UseVisualStyleBackColor = true;
+            this.buttonUploadPhoto.Click += new System.EventHandler(this.buttonUploadPhoto_Click);
+            // 
+            // buttonCreateAlbum
+            // 
+            this.buttonCreateAlbum.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonCreateAlbum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCreateAlbum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCreateAlbum.Enabled = false;
+            this.buttonCreateAlbum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonCreateAlbum.Location = new System.Drawing.Point(7, 222);
+            this.buttonCreateAlbum.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCreateAlbum.Name = "buttonCreateAlbum";
+            this.buttonCreateAlbum.Size = new System.Drawing.Size(186, 32);
+            this.buttonCreateAlbum.TabIndex = 8;
+            this.buttonCreateAlbum.Text = "Create Album";
+            this.buttonCreateAlbum.UseVisualStyleBackColor = true;
+            this.buttonCreateAlbum.Click += new System.EventHandler(this.buttonCreateAlbum_Click);
+            // 
+            // pictureBoxPhoto
+            // 
+            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(373, 34);
+            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(290, 290);
+            this.pictureBoxPhoto.TabIndex = 5;
+            this.pictureBoxPhoto.TabStop = false;
+            // 
             // listBoxPhoto
             // 
             this.listBoxPhoto.FormattingEnabled = true;
@@ -298,6 +425,22 @@
             this.labelAlbum.Size = new System.Drawing.Size(41, 13);
             this.labelAlbum.TabIndex = 1;
             this.labelAlbum.Text = "Albums";
+            // 
+            // buttonRefreshAlbums
+            // 
+            this.buttonRefreshAlbums.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonRefreshAlbums.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRefreshAlbums.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRefreshAlbums.Enabled = false;
+            this.buttonRefreshAlbums.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonRefreshAlbums.Location = new System.Drawing.Point(7, 257);
+            this.buttonRefreshAlbums.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRefreshAlbums.Name = "buttonRefreshAlbums";
+            this.buttonRefreshAlbums.Size = new System.Drawing.Size(186, 32);
+            this.buttonRefreshAlbums.TabIndex = 2;
+            this.buttonRefreshAlbums.Text = "Refresh Albums";
+            this.buttonRefreshAlbums.UseVisualStyleBackColor = true;
+            this.buttonRefreshAlbums.Click += new System.EventHandler(this.buttonRefreshAlbums_Click);
             // 
             // listBoxAlbums
             // 
@@ -348,6 +491,15 @@
             this.labelFriendLastNameInfo.Name = "labelFriendLastNameInfo";
             this.labelFriendLastNameInfo.Size = new System.Drawing.Size(0, 16);
             this.labelFriendLastNameInfo.TabIndex = 18;
+            // 
+            // pictureBoxFriendPicture
+            // 
+            this.pictureBoxFriendPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxFriendPicture.Location = new System.Drawing.Point(7, 6);
+            this.pictureBoxFriendPicture.Name = "pictureBoxFriendPicture";
+            this.pictureBoxFriendPicture.Size = new System.Drawing.Size(170, 170);
+            this.pictureBoxFriendPicture.TabIndex = 6;
+            this.pictureBoxFriendPicture.TabStop = false;
             // 
             // labelFriendFirstNameInfo
             // 
@@ -415,6 +567,29 @@
             this.labelFriendsList.TabIndex = 4;
             this.labelFriendsList.Text = "Friends List";
             // 
+            // buttonRefreshFriends
+            // 
+            this.buttonRefreshFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRefreshFriends.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonRefreshFriends.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonRefreshFriends.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonRefreshFriends.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRefreshFriends.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRefreshFriends.Enabled = false;
+            this.buttonRefreshFriends.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonRefreshFriends.Location = new System.Drawing.Point(35, 281);
+            this.buttonRefreshFriends.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRefreshFriends.MaximumSize = new System.Drawing.Size(112, 45);
+            this.buttonRefreshFriends.MinimumSize = new System.Drawing.Size(112, 45);
+            this.buttonRefreshFriends.Name = "buttonRefreshFriends";
+            this.buttonRefreshFriends.Size = new System.Drawing.Size(112, 45);
+            this.buttonRefreshFriends.TabIndex = 3;
+            this.buttonRefreshFriends.Text = "Refresh Friends List";
+            this.buttonRefreshFriends.UseVisualStyleBackColor = false;
+            this.buttonRefreshFriends.Click += new System.EventHandler(this.buttonRefreshFriends_Click);
+            // 
             // listBoxFriends
             // 
             this.listBoxFriends.FormattingEnabled = true;
@@ -437,6 +612,32 @@
             this.tabPageLikes.Size = new System.Drawing.Size(682, 335);
             this.tabPageLikes.TabIndex = 3;
             this.tabPageLikes.Text = "Pages";
+            // 
+            // pictureBoxPages
+            // 
+            this.pictureBoxPages.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBoxPages.BackgroundImage = global::FacebookApplication.Properties.Resources.Pages;
+            this.pictureBoxPages.Location = new System.Drawing.Point(254, 7);
+            this.pictureBoxPages.Name = "pictureBoxPages";
+            this.pictureBoxPages.Size = new System.Drawing.Size(128, 130);
+            this.pictureBoxPages.TabIndex = 2;
+            this.pictureBoxPages.TabStop = false;
+            // 
+            // buttonRefreshPages
+            // 
+            this.buttonRefreshPages.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonRefreshPages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRefreshPages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRefreshPages.Enabled = false;
+            this.buttonRefreshPages.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonRefreshPages.Location = new System.Drawing.Point(253, 289);
+            this.buttonRefreshPages.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRefreshPages.Name = "buttonRefreshPages";
+            this.buttonRefreshPages.Size = new System.Drawing.Size(129, 34);
+            this.buttonRefreshPages.TabIndex = 1;
+            this.buttonRefreshPages.Text = "Refresh Pages";
+            this.buttonRefreshPages.UseVisualStyleBackColor = true;
+            this.buttonRefreshPages.Click += new System.EventHandler(this.buttonLoadPages_Click);
             // 
             // listBoxPages
             // 
@@ -461,6 +662,32 @@
             this.tabEvents.TabIndex = 4;
             this.tabEvents.Text = "Events";
             // 
+            // pictureBoxCalendar
+            // 
+            this.pictureBoxCalendar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBoxCalendar.Image = global::FacebookApplication.Properties.Resources.calender;
+            this.pictureBoxCalendar.Location = new System.Drawing.Point(437, 84);
+            this.pictureBoxCalendar.Name = "pictureBoxCalendar";
+            this.pictureBoxCalendar.Size = new System.Drawing.Size(123, 125);
+            this.pictureBoxCalendar.TabIndex = 3;
+            this.pictureBoxCalendar.TabStop = false;
+            // 
+            // buttonLoadEvents
+            // 
+            this.buttonLoadEvents.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonLoadEvents.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLoadEvents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoadEvents.Enabled = false;
+            this.buttonLoadEvents.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonLoadEvents.Location = new System.Drawing.Point(176, 248);
+            this.buttonLoadEvents.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLoadEvents.Name = "buttonLoadEvents";
+            this.buttonLoadEvents.Size = new System.Drawing.Size(113, 27);
+            this.buttonLoadEvents.TabIndex = 2;
+            this.buttonLoadEvents.Text = "Load Events";
+            this.buttonLoadEvents.UseVisualStyleBackColor = true;
+            this.buttonLoadEvents.Click += new System.EventHandler(this.buttonLoadEvents_Click);
+            // 
             // listBoxMyEvents
             // 
             this.listBoxMyEvents.FormattingEnabled = true;
@@ -483,6 +710,21 @@
             this.tabYourActivity.TabIndex = 6;
             this.tabYourActivity.Text = "Your Activity";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(37, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(113, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(288, 32);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(370, 282);
+            this.webBrowser1.TabIndex = 4;
+            // 
             // labelYourActivityTitle
             // 
             this.labelYourActivityTitle.AutoSize = true;
@@ -492,61 +734,131 @@
             this.labelYourActivityTitle.Size = new System.Drawing.Size(134, 24);
             this.labelYourActivityTitle.TabIndex = 3;
             this.labelYourActivityTitle.Text = "elior the kaka";
-            this.labelYourActivityTitle.Click += new System.EventHandler(this.labelYourActivityTitle_Click);
             // 
-            // tabKnowYourFriends
+            // tabTopLikedPhotos
             // 
-            this.tabKnowYourFriends.BackColor = System.Drawing.SystemColors.Control;
-            this.tabKnowYourFriends.Controls.Add(this.labelNumberOfConnectedFriendsInfo);
-            this.tabKnowYourFriends.Controls.Add(this.labelNumberOfConnectedFriends);
-            this.tabKnowYourFriends.Controls.Add(this.pictureBoxConnectedFriends);
-            this.tabKnowYourFriends.Controls.Add(this.listBoxKnowYourFriends);
-            this.tabKnowYourFriends.Controls.Add(this.buttonKnowYourFriends);
-            this.tabKnowYourFriends.Location = new System.Drawing.Point(4, 22);
-            this.tabKnowYourFriends.Name = "tabKnowYourFriends";
-            this.tabKnowYourFriends.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKnowYourFriends.Size = new System.Drawing.Size(682, 335);
-            this.tabKnowYourFriends.TabIndex = 7;
-            this.tabKnowYourFriends.Text = "Know Your Friends";
+            this.tabTopLikedPhotos.BackColor = System.Drawing.SystemColors.Control;
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes2);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes3);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes4);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes5);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes6);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes1);
+            this.tabTopLikedPhotos.Controls.Add(this.buttonGetTop);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop6);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop5);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop4);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop3);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop2);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop1);
+            this.tabTopLikedPhotos.Location = new System.Drawing.Point(4, 22);
+            this.tabTopLikedPhotos.Name = "tabTopLikedPhotos";
+            this.tabTopLikedPhotos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTopLikedPhotos.Size = new System.Drawing.Size(682, 335);
+            this.tabTopLikedPhotos.TabIndex = 7;
+            this.tabTopLikedPhotos.Text = "Top Liked Photos";
             // 
-            // labelNumberOfConnectedFriendsInfo
+            // textBoxLikes2
             // 
-            this.labelNumberOfConnectedFriendsInfo.AutoSize = true;
-            this.labelNumberOfConnectedFriendsInfo.Location = new System.Drawing.Point(171, 304);
-            this.labelNumberOfConnectedFriendsInfo.Name = "labelNumberOfConnectedFriendsInfo";
-            this.labelNumberOfConnectedFriendsInfo.Size = new System.Drawing.Size(0, 13);
-            this.labelNumberOfConnectedFriendsInfo.TabIndex = 5;
+            this.textBoxLikes2.Location = new System.Drawing.Point(126, 130);
+            this.textBoxLikes2.Name = "textBoxLikes2";
+            this.textBoxLikes2.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes2.TabIndex = 12;
             // 
-            // labelNumberOfConnectedFriends
+            // textBoxLikes3
             // 
-            this.labelNumberOfConnectedFriends.AutoSize = true;
-            this.labelNumberOfConnectedFriends.Location = new System.Drawing.Point(21, 304);
-            this.labelNumberOfConnectedFriends.Name = "labelNumberOfConnectedFriends";
-            this.labelNumberOfConnectedFriends.Size = new System.Drawing.Size(153, 13);
-            this.labelNumberOfConnectedFriends.TabIndex = 3;
-            this.labelNumberOfConnectedFriends.Text = "Number Of Connected Friends:";
-            this.labelNumberOfConnectedFriends.UseMnemonic = false;
-            this.labelNumberOfConnectedFriends.UseWaitCursor = true;
+            this.textBoxLikes3.Location = new System.Drawing.Point(448, 130);
+            this.textBoxLikes3.Name = "textBoxLikes3";
+            this.textBoxLikes3.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes3.TabIndex = 11;
             // 
-            // listBoxKnowYourFriends
+            // textBoxLikes4
             // 
-            this.listBoxKnowYourFriends.FormattingEnabled = true;
-            this.listBoxKnowYourFriends.Location = new System.Drawing.Point(24, 59);
-            this.listBoxKnowYourFriends.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxKnowYourFriends.Name = "listBoxKnowYourFriends";
-            this.listBoxKnowYourFriends.Size = new System.Drawing.Size(422, 238);
-            this.listBoxKnowYourFriends.TabIndex = 2;
+            this.textBoxLikes4.Location = new System.Drawing.Point(52, 237);
+            this.textBoxLikes4.Name = "textBoxLikes4";
+            this.textBoxLikes4.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes4.TabIndex = 10;
             // 
-            // buttonKnowYourFriends
+            // textBoxLikes5
             // 
-            this.buttonKnowYourFriends.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonKnowYourFriends.Location = new System.Drawing.Point(24, 20);
-            this.buttonKnowYourFriends.Name = "buttonKnowYourFriends";
-            this.buttonKnowYourFriends.Size = new System.Drawing.Size(159, 34);
-            this.buttonKnowYourFriends.TabIndex = 0;
-            this.buttonKnowYourFriends.Text = "Know your friends";
-            this.buttonKnowYourFriends.UseVisualStyleBackColor = true;
-            this.buttonKnowYourFriends.Click += new System.EventHandler(this.buttonKnowYourFriends_Click);
+            this.textBoxLikes5.Location = new System.Drawing.Point(288, 228);
+            this.textBoxLikes5.Name = "textBoxLikes5";
+            this.textBoxLikes5.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes5.TabIndex = 9;
+            // 
+            // textBoxLikes6
+            // 
+            this.textBoxLikes6.Location = new System.Drawing.Point(517, 237);
+            this.textBoxLikes6.Name = "textBoxLikes6";
+            this.textBoxLikes6.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes6.TabIndex = 8;
+            // 
+            // textBoxLikes1
+            // 
+            this.textBoxLikes1.Location = new System.Drawing.Point(288, 15);
+            this.textBoxLikes1.Name = "textBoxLikes1";
+            this.textBoxLikes1.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes1.TabIndex = 7;
+            // 
+            // buttonGetTop
+            // 
+            this.buttonGetTop.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonGetTop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonGetTop.Location = new System.Drawing.Point(547, 30);
+            this.buttonGetTop.Name = "buttonGetTop";
+            this.buttonGetTop.Size = new System.Drawing.Size(79, 43);
+            this.buttonGetTop.TabIndex = 6;
+            this.buttonGetTop.Text = "Get Top Liked Photos";
+            this.buttonGetTop.UseVisualStyleBackColor = true;
+            this.buttonGetTop.Click += new System.EventHandler(this.buttonGetTop_Click);
+            // 
+            // pictureBoxTop6
+            // 
+            this.pictureBoxTop6.Location = new System.Drawing.Point(392, 237);
+            this.pictureBoxTop6.Name = "pictureBoxTop6";
+            this.pictureBoxTop6.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop6.TabIndex = 5;
+            this.pictureBoxTop6.TabStop = false;
+            // 
+            // pictureBoxTop5
+            // 
+            this.pictureBoxTop5.Location = new System.Drawing.Point(256, 237);
+            this.pictureBoxTop5.Name = "pictureBoxTop5";
+            this.pictureBoxTop5.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop5.TabIndex = 4;
+            this.pictureBoxTop5.TabStop = false;
+            // 
+            // pictureBoxTop4
+            // 
+            this.pictureBoxTop4.Location = new System.Drawing.Point(108, 237);
+            this.pictureBoxTop4.Name = "pictureBoxTop4";
+            this.pictureBoxTop4.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop4.TabIndex = 3;
+            this.pictureBoxTop4.TabStop = false;
+            // 
+            // pictureBoxTop3
+            // 
+            this.pictureBoxTop3.Location = new System.Drawing.Point(323, 130);
+            this.pictureBoxTop3.Name = "pictureBoxTop3";
+            this.pictureBoxTop3.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop3.TabIndex = 2;
+            this.pictureBoxTop3.TabStop = false;
+            // 
+            // pictureBoxTop2
+            // 
+            this.pictureBoxTop2.Location = new System.Drawing.Point(182, 130);
+            this.pictureBoxTop2.Name = "pictureBoxTop2";
+            this.pictureBoxTop2.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop2.TabIndex = 1;
+            this.pictureBoxTop2.TabStop = false;
+            // 
+            // pictureBoxTop1
+            // 
+            this.pictureBoxTop1.Location = new System.Drawing.Point(256, 24);
+            this.pictureBoxTop1.Name = "pictureBoxTop1";
+            this.pictureBoxTop1.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop1.TabIndex = 0;
+            this.pictureBoxTop1.TabStop = false;
             // 
             // labelGenderInfo
             // 
@@ -693,244 +1005,6 @@
             this.pictureBoxProfilePic.TabIndex = 1;
             this.pictureBoxProfilePic.TabStop = false;
             // 
-            // pictureBoxFacebookLogo
-            // 
-            this.pictureBoxFacebookLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFacebookLogo.Image")));
-            this.pictureBoxFacebookLogo.Location = new System.Drawing.Point(8, 8);
-            this.pictureBoxFacebookLogo.Name = "pictureBoxFacebookLogo";
-            this.pictureBoxFacebookLogo.Size = new System.Drawing.Size(129, 133);
-            this.pictureBoxFacebookLogo.TabIndex = 14;
-            this.pictureBoxFacebookLogo.TabStop = false;
-            // 
-            // buttonLoginLogout
-            // 
-            this.buttonLoginLogout.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonLoginLogout.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonLoginLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLoginLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLoginLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonLoginLogout.Location = new System.Drawing.Point(6, 147);
-            this.buttonLoginLogout.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonLoginLogout.Name = "buttonLoginLogout";
-            this.buttonLoginLogout.Size = new System.Drawing.Size(131, 35);
-            this.buttonLoginLogout.TabIndex = 0;
-            this.buttonLoginLogout.Text = "Login";
-            this.buttonLoginLogout.UseVisualStyleBackColor = false;
-            this.buttonLoginLogout.Click += new System.EventHandler(this.buttonLogin_Click);
-            // 
-            // buttonDeletePost
-            // 
-            this.buttonDeletePost.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonDeletePost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonDeletePost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDeletePost.Enabled = false;
-            this.buttonDeletePost.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonDeletePost.Location = new System.Drawing.Point(546, 285);
-            this.buttonDeletePost.Name = "buttonDeletePost";
-            this.buttonDeletePost.Size = new System.Drawing.Size(123, 31);
-            this.buttonDeletePost.TabIndex = 4;
-            this.buttonDeletePost.Text = "Delete Selected Post";
-            this.buttonDeletePost.UseVisualStyleBackColor = true;
-            this.buttonDeletePost.Click += new System.EventHandler(this.buttonDeletePost_Click);
-            // 
-            // buttonShareMyPost
-            // 
-            this.buttonShareMyPost.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonShareMyPost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonShareMyPost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonShareMyPost.Enabled = false;
-            this.buttonShareMyPost.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonShareMyPost.Location = new System.Drawing.Point(588, 4);
-            this.buttonShareMyPost.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonShareMyPost.Name = "buttonShareMyPost";
-            this.buttonShareMyPost.Size = new System.Drawing.Size(81, 37);
-            this.buttonShareMyPost.TabIndex = 3;
-            this.buttonShareMyPost.Text = "Share Post";
-            this.buttonShareMyPost.UseVisualStyleBackColor = true;
-            this.buttonShareMyPost.Click += new System.EventHandler(this.buttonShareMyPost_Click);
-            // 
-            // buttonRefreshPosts
-            // 
-            this.buttonRefreshPosts.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonRefreshPosts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRefreshPosts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRefreshPosts.Enabled = false;
-            this.buttonRefreshPosts.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonRefreshPosts.Location = new System.Drawing.Point(6, 285);
-            this.buttonRefreshPosts.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonRefreshPosts.Name = "buttonRefreshPosts";
-            this.buttonRefreshPosts.Size = new System.Drawing.Size(101, 31);
-            this.buttonRefreshPosts.TabIndex = 1;
-            this.buttonRefreshPosts.Text = "Refresh Posts";
-            this.buttonRefreshPosts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonRefreshPosts.UseVisualStyleBackColor = true;
-            this.buttonRefreshPosts.Click += new System.EventHandler(this.buttonRefreshPosts_Click);
-            // 
-            // buttonUploadPhoto
-            // 
-            this.buttonUploadPhoto.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonUploadPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonUploadPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonUploadPhoto.Enabled = false;
-            this.buttonUploadPhoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonUploadPhoto.Location = new System.Drawing.Point(7, 292);
-            this.buttonUploadPhoto.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUploadPhoto.Name = "buttonUploadPhoto";
-            this.buttonUploadPhoto.Size = new System.Drawing.Size(186, 32);
-            this.buttonUploadPhoto.TabIndex = 9;
-            this.buttonUploadPhoto.Text = "Upload A Photo To Album";
-            this.buttonUploadPhoto.UseVisualStyleBackColor = true;
-            this.buttonUploadPhoto.Click += new System.EventHandler(this.buttonUploadPhoto_Click);
-            // 
-            // buttonCreateAlbum
-            // 
-            this.buttonCreateAlbum.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonCreateAlbum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCreateAlbum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateAlbum.Enabled = false;
-            this.buttonCreateAlbum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCreateAlbum.Location = new System.Drawing.Point(7, 222);
-            this.buttonCreateAlbum.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCreateAlbum.Name = "buttonCreateAlbum";
-            this.buttonCreateAlbum.Size = new System.Drawing.Size(186, 32);
-            this.buttonCreateAlbum.TabIndex = 8;
-            this.buttonCreateAlbum.Text = "Create Album";
-            this.buttonCreateAlbum.UseVisualStyleBackColor = true;
-            this.buttonCreateAlbum.Click += new System.EventHandler(this.buttonCreateAlbum_Click);
-            // 
-            // pictureBoxPhoto
-            // 
-            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxPhoto.Location = new System.Drawing.Point(373, 34);
-            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
-            this.pictureBoxPhoto.Size = new System.Drawing.Size(290, 290);
-            this.pictureBoxPhoto.TabIndex = 5;
-            this.pictureBoxPhoto.TabStop = false;
-            // 
-            // buttonRefreshAlbums
-            // 
-            this.buttonRefreshAlbums.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonRefreshAlbums.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRefreshAlbums.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRefreshAlbums.Enabled = false;
-            this.buttonRefreshAlbums.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonRefreshAlbums.Location = new System.Drawing.Point(7, 257);
-            this.buttonRefreshAlbums.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonRefreshAlbums.Name = "buttonRefreshAlbums";
-            this.buttonRefreshAlbums.Size = new System.Drawing.Size(186, 32);
-            this.buttonRefreshAlbums.TabIndex = 2;
-            this.buttonRefreshAlbums.Text = "Refresh Albums";
-            this.buttonRefreshAlbums.UseVisualStyleBackColor = true;
-            this.buttonRefreshAlbums.Click += new System.EventHandler(this.buttonRefreshAlbums_Click);
-            // 
-            // pictureBoxFriendPicture
-            // 
-            this.pictureBoxFriendPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxFriendPicture.Location = new System.Drawing.Point(7, 6);
-            this.pictureBoxFriendPicture.Name = "pictureBoxFriendPicture";
-            this.pictureBoxFriendPicture.Size = new System.Drawing.Size(170, 170);
-            this.pictureBoxFriendPicture.TabIndex = 6;
-            this.pictureBoxFriendPicture.TabStop = false;
-            // 
-            // buttonRefreshFriends
-            // 
-            this.buttonRefreshFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRefreshFriends.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRefreshFriends.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonRefreshFriends.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonRefreshFriends.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRefreshFriends.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRefreshFriends.Enabled = false;
-            this.buttonRefreshFriends.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonRefreshFriends.Location = new System.Drawing.Point(35, 281);
-            this.buttonRefreshFriends.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonRefreshFriends.MaximumSize = new System.Drawing.Size(112, 45);
-            this.buttonRefreshFriends.MinimumSize = new System.Drawing.Size(112, 45);
-            this.buttonRefreshFriends.Name = "buttonRefreshFriends";
-            this.buttonRefreshFriends.Size = new System.Drawing.Size(112, 45);
-            this.buttonRefreshFriends.TabIndex = 3;
-            this.buttonRefreshFriends.Text = "Refresh Friends List";
-            this.buttonRefreshFriends.UseVisualStyleBackColor = false;
-            this.buttonRefreshFriends.Click += new System.EventHandler(this.buttonRefreshFriends_Click);
-            // 
-            // pictureBoxPages
-            // 
-            this.pictureBoxPages.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBoxPages.BackgroundImage = global::FacebookApplication.Properties.Resources.Pages;
-            this.pictureBoxPages.Location = new System.Drawing.Point(254, 7);
-            this.pictureBoxPages.Name = "pictureBoxPages";
-            this.pictureBoxPages.Size = new System.Drawing.Size(128, 130);
-            this.pictureBoxPages.TabIndex = 2;
-            this.pictureBoxPages.TabStop = false;
-            // 
-            // buttonRefreshPages
-            // 
-            this.buttonRefreshPages.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonRefreshPages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRefreshPages.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRefreshPages.Enabled = false;
-            this.buttonRefreshPages.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonRefreshPages.Location = new System.Drawing.Point(253, 289);
-            this.buttonRefreshPages.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonRefreshPages.Name = "buttonRefreshPages";
-            this.buttonRefreshPages.Size = new System.Drawing.Size(129, 34);
-            this.buttonRefreshPages.TabIndex = 1;
-            this.buttonRefreshPages.Text = "Refresh Pages";
-            this.buttonRefreshPages.UseVisualStyleBackColor = true;
-            this.buttonRefreshPages.Click += new System.EventHandler(this.buttonLoadPages_Click);
-            // 
-            // pictureBoxCalendar
-            // 
-            this.pictureBoxCalendar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBoxCalendar.Image = global::FacebookApplication.Properties.Resources.calender;
-            this.pictureBoxCalendar.Location = new System.Drawing.Point(437, 84);
-            this.pictureBoxCalendar.Name = "pictureBoxCalendar";
-            this.pictureBoxCalendar.Size = new System.Drawing.Size(123, 125);
-            this.pictureBoxCalendar.TabIndex = 3;
-            this.pictureBoxCalendar.TabStop = false;
-            // 
-            // buttonLoadEvents
-            // 
-            this.buttonLoadEvents.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
-            this.buttonLoadEvents.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLoadEvents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLoadEvents.Enabled = false;
-            this.buttonLoadEvents.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonLoadEvents.Location = new System.Drawing.Point(176, 248);
-            this.buttonLoadEvents.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonLoadEvents.Name = "buttonLoadEvents";
-            this.buttonLoadEvents.Size = new System.Drawing.Size(113, 27);
-            this.buttonLoadEvents.TabIndex = 2;
-            this.buttonLoadEvents.Text = "Load Events";
-            this.buttonLoadEvents.UseVisualStyleBackColor = true;
-            this.buttonLoadEvents.Click += new System.EventHandler(this.buttonLoadEvents_Click);
-            // 
-            // pictureBoxConnectedFriends
-            // 
-            this.pictureBoxConnectedFriends.Location = new System.Drawing.Point(501, 106);
-            this.pictureBoxConnectedFriends.Name = "pictureBoxConnectedFriends";
-            this.pictureBoxConnectedFriends.Size = new System.Drawing.Size(128, 128);
-            this.pictureBoxConnectedFriends.TabIndex = 4;
-            this.pictureBoxConnectedFriends.TabStop = false;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(288, 32);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(370, 282);
-            this.webBrowser1.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(37, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 20);
-            this.textBox1.TabIndex = 5;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -943,35 +1017,39 @@
             this.Name = "MainForm";
             this.Text = "Facebook";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.mainForm_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFacebookLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPosts.ResumeLayout(false);
             this.tabPosts.PerformLayout();
             this.tabPhotos.ResumeLayout(false);
             this.tabPhotos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.tabFriends.ResumeLayout(false);
             this.tabFriends.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPicture)).EndInit();
             this.tabPageLikes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPages)).EndInit();
             this.tabEvents.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
             this.tabYourActivity.ResumeLayout(false);
             this.tabYourActivity.PerformLayout();
-            this.tabKnowYourFriends.ResumeLayout(false);
-            this.tabKnowYourFriends.PerformLayout();
+            this.tabTopLikedPhotos.ResumeLayout(false);
+            this.tabTopLikedPhotos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFacebookLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPages)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConnectedFriends)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1038,15 +1116,23 @@
         private System.Windows.Forms.Label labelCredit;
         private System.Windows.Forms.PictureBox pictureBoxPages;
         private System.Windows.Forms.PictureBox pictureBoxCalendar;
-        private System.Windows.Forms.TabPage tabKnowYourFriends;
-        private System.Windows.Forms.ListBox listBoxKnowYourFriends;
-        private System.Windows.Forms.Button buttonKnowYourFriends;
-        private System.Windows.Forms.Label labelNumberOfConnectedFriends;
+        private System.Windows.Forms.TabPage tabTopLikedPhotos;
         private System.Windows.Forms.Label labelYourActivityTitle;
-        private System.Windows.Forms.PictureBox pictureBoxConnectedFriends;
-        private System.Windows.Forms.Label labelNumberOfConnectedFriendsInfo;
         private System.Windows.Forms.Button buttonRefreshPosts;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.TextBox textBoxLikes2;
+        private System.Windows.Forms.TextBox textBoxLikes3;
+        private System.Windows.Forms.TextBox textBoxLikes4;
+        private System.Windows.Forms.TextBox textBoxLikes5;
+        private System.Windows.Forms.TextBox textBoxLikes6;
+        private System.Windows.Forms.TextBox textBoxLikes1;
+        private System.Windows.Forms.Button buttonGetTop;
+        private System.Windows.Forms.PictureBox pictureBoxTop6;
+        private System.Windows.Forms.PictureBox pictureBoxTop5;
+        private System.Windows.Forms.PictureBox pictureBoxTop4;
+        private System.Windows.Forms.PictureBox pictureBoxTop3;
+        private System.Windows.Forms.PictureBox pictureBoxTop2;
+        private System.Windows.Forms.PictureBox pictureBoxTop1;
     }
 }

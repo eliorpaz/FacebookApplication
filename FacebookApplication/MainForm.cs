@@ -13,12 +13,10 @@ namespace FacebookApplication
     {
         private User m_FacebookUser;
         private Settings m_Settings;
-        private bool m_chartDisplayed;
 
         public MainForm()
         {
             InitializeComponent();
-            m_chartDisplayed = false;
         }
 
         private void mainForm_Shown(object sender, EventArgs e)
@@ -106,8 +104,7 @@ namespace FacebookApplication
             listBoxFriends.Items.Clear();
             listBoxPages.Items.Clear();
             listBoxMyEvents.Items.Clear();
-            reInitializeChart();
-            clearKnowYourFriends();
+            clearTopLikedPhotos();
             makeButtonsEnabled(false);
         }
 
@@ -122,9 +119,8 @@ namespace FacebookApplication
             buttonCreateAlbum.Enabled = i_IsButtonEnabled;
             buttonDeletePost.Enabled = i_IsButtonEnabled;
             buttonUploadPhoto.Enabled = i_IsButtonEnabled;
-            buttonCountPosts.Enabled = i_IsButtonEnabled;
-            buttonClearChart.Enabled = i_IsButtonEnabled;
-            buttonKnowYourFriends.Enabled = i_IsButtonEnabled;
+            buttonGetTop.Enabled = i_IsButtonEnabled;
+
         }
 
         private void checkBoxRememberMe_CheckedChanged(object sender, EventArgs e)
@@ -338,142 +334,87 @@ namespace FacebookApplication
             }
         }
 
-        private void buildChart()
+        private void topLikedPhotos()
         {
-            foreach (Post post in m_FacebookUser.Posts)
-            {
-                int hour = getHour(post.UpdateTime);
-                double[] yValuesArray = new double[4];
-                yValuesArray = chartYourActivity.Series["Series1"].Points[hour].YValues;
-                yValuesArray[0]++;
-                chartYourActivity.Series["Series1"].Points[hour].YValues = yValuesArray;
-            }
-        }
+            List<Photo> sortPhotos = new List<Photo>();
 
-        private void countPosts()
-        {
-            if (m_chartDisplayed)
+            m_FacebookUser.ReFetch();
+            try
             {
-                MessageBox.Show("Please clean the chart first.");
-            }
-            else
-            {
-                buildChart();
-                m_chartDisplayed = true;
-            }
-        }
-
-        private void reInitializeChart()
-        {
-            foreach (DataPoint arr in chartYourActivity.Series["Series1"].Points)
-            {
-                arr.YValues = new double[4];
-            }
-
-            m_chartDisplayed = false;
-        }
-
-        private int getHour(DateTime? i_UpdateTime)
-        {
-            int hour = 0;
-            string strHour = i_UpdateTime.ToString();
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < strHour.Length; i++)
-            {
-                if (strHour[i] == ':')
+                foreach (Album album in m_FacebookUser.Albums)
                 {
-                    if (!strHour[i - 2].Equals(" "))
+                    foreach (Photo photo in album.Photos)
                     {
-                        stringBuilder.Append(strHour[i - 2]);
+                        insertByLikedCountPhotos(sortPhotos, photo);
                     }
+                }
 
-                    stringBuilder.Append(strHour[i - 1]);
-                    hour = Convert.ToInt32(stringBuilder.ToString());
-                    if (strHour[strHour.Length - 2].Equals('P'))
-                    {
-                        if (hour != 12)
-                        {
-                            hour += 12;
-                        }
-                    }
-                    else
-                    {
-                        if (hour == 12)
-                        {
-                            hour = 0;
-                        }
-                    }
+                insretTop6Photo(sortPhotos);
+            }
+            catch(FacebookOAuthException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+           
+        }
 
-                    break;
+        private void insertByLikedCountPhotos(List<Photo> i_Photos, Photo i_Photo)
+        {
+            int index = 0;
+
+            for (int i = 0; i < i_Photos.Count; i++)
+            {
+                if(i_Photo.LikedBy.Count <= i_Photos[i].LikedBy.Count)
+                {
+                    index = i+1;
                 }
             }
 
-            return hour;
+            i_Photos.Insert(index, i_Photo);
         }
 
-        private void knowYourFriends()
+        private void insretTop6Photo(List<Photo> i_Photos)
         {
-            Dictionary<string, int> userFriendsNumberOfFriends = new Dictionary<string, int>(m_FacebookUser.Friends.Count);
-            Dictionary<string, string> userFriendsIDS = new Dictionary<string, string>();
-            int maxMutualFriends = 0;
-            List<string> listOfConnectedFriends;
+            pictureBoxTop1.ImageLocation = i_Photos[0].PictureThumbURL;
+            pictureBoxTop1.SizeMode = PictureBoxSizeMode.StretchImage;
+            textBoxLikes1.Text = i_Photos[0].LikedBy.Count.ToString() + " Likes";
 
-            foreach (User friend in m_FacebookUser.Friends)
-            {
-                userFriendsNumberOfFriends.Add(friend.Id, maxMutualFriends);
-                userFriendsIDS.Add(friend.Id, friend.Name);
-            }
+            pictureBoxTop2.ImageLocation = i_Photos[1].PictureThumbURL;
+            pictureBoxTop2.SizeMode = PictureBoxSizeMode.StretchImage;
+            textBoxLikes2.Text = i_Photos[1].LikedBy.Count.ToString() + " Likes";
 
-            foreach (User friend in m_FacebookUser.Friends)
-            {
-                foreach (User friendOfFriend in friend.Friends)
-                {
-                    if (userFriendsNumberOfFriends.ContainsKey(friendOfFriend.Id))
-                    {
-                        userFriendsNumberOfFriends[friendOfFriend.Id]++;
-                        if (maxMutualFriends <= userFriendsNumberOfFriends[friendOfFriend.Id])
-                        {
-                            maxMutualFriends = userFriendsNumberOfFriends[friendOfFriend.Id];
-                        }
-                    }
-                }
-            }
+            pictureBoxTop3.ImageLocation = i_Photos[2].PictureThumbURL;
+            pictureBoxTop3.SizeMode = PictureBoxSizeMode.StretchImage;
+            textBoxLikes3.Text = i_Photos[2].LikedBy.Count.ToString() + " Likes";
 
-            listOfConnectedFriends = getlistOfConnectedFriends(userFriendsNumberOfFriends, userFriendsIDS, maxMutualFriends);
-            addItemsToListBoxKnowYourFriends(listOfConnectedFriends);
-            labelNumberOfConnectedFriendsInfo.Text = maxMutualFriends.ToString();
+            pictureBoxTop4.ImageLocation = i_Photos[3].PictureThumbURL;
+            pictureBoxTop4.SizeMode = PictureBoxSizeMode.StretchImage;
+            textBoxLikes4.Text = i_Photos[3].LikedBy.Count.ToString() + " Likes";
+
+            pictureBoxTop5.ImageLocation = i_Photos[4].PictureThumbURL;
+            pictureBoxTop5.SizeMode = PictureBoxSizeMode.StretchImage;
+            textBoxLikes5.Text = i_Photos[4].LikedBy.Count.ToString() + " Likes";
+
+            pictureBoxTop6.ImageLocation = i_Photos[5].PictureThumbURL;
+            pictureBoxTop6.SizeMode = PictureBoxSizeMode.StretchImage;
+            textBoxLikes6.Text = i_Photos[5].LikedBy.Count.ToString() + " Likes";
         }
 
-        private List<string> getlistOfConnectedFriends(
-            Dictionary<string, int> i_UserFriendsNumberOfFriends,
-            Dictionary<string, string> i_UserFriendsIDS,
-            int i_MaxMutualFriends)
+        private void clearTopLikedPhotos()
         {
-            List<string> listOfConnectedFriends = new List<string>();
+            pictureBoxTop1.ImageLocation = null;
+            pictureBoxTop2.ImageLocation = null;
+            pictureBoxTop3.ImageLocation = null;
+            pictureBoxTop4.ImageLocation = null;
+            pictureBoxTop5.ImageLocation = null;
+            pictureBoxTop6.ImageLocation = null;
 
-            foreach (string id in i_UserFriendsNumberOfFriends.Keys)
-            {
-                if (i_UserFriendsNumberOfFriends[id] == i_MaxMutualFriends)
-                {
-                    listOfConnectedFriends.Add(i_UserFriendsIDS[id]);
-                }
-            }
-
-            return listOfConnectedFriends;
-        }
-
-        private void addItemsToListBoxKnowYourFriends(List<string> i_ListOfConnectedFriends)
-        {
-            foreach (string friendName in i_ListOfConnectedFriends)
-            {
-                listBoxKnowYourFriends.Items.Add(friendName);
-            }
-        }
-
-        private void clearKnowYourFriends()
-        {
-            listBoxKnowYourFriends.Items.Clear();
-            labelNumberOfConnectedFriendsInfo.Text = string.Empty;
+            textBoxLikes1.Text = string.Empty;
+            textBoxLikes2.Text = string.Empty;
+            textBoxLikes3.Text = string.Empty;
+            textBoxLikes4.Text = string.Empty;
+            textBoxLikes5.Text = string.Empty;
+            textBoxLikes6.Text = string.Empty;
         }
 
         private void buttonRefreshPosts_Click(object sender, EventArgs e)
@@ -557,34 +498,9 @@ namespace FacebookApplication
             loadEvents();
         }
 
-        private void buttonCountPosts_Click(object sender, EventArgs e)
+        private void buttonGetTop_Click(object sender, EventArgs e)
         {
-            countPosts();
-        }
-
-        private void buttonClearChart_Click(object sender, EventArgs e)
-        {
-            reInitializeChart();
-        }
-
-        private void buttonKnowYourFriends_Click(object sender, EventArgs e)
-        {
-            knowYourFriends();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelCredit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelYourActivityTitle_Click(object sender, EventArgs e)
-        {
-
+            topLikedPhotos();
         }
     }
 }
