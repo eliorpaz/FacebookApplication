@@ -108,6 +108,8 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBoxProfilePic = new System.Windows.Forms.PictureBox();
+            this.listBoxTopFriends = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFacebookLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -738,6 +740,8 @@
             // tabTopLikedPhotos
             // 
             this.tabTopLikedPhotos.BackColor = System.Drawing.SystemColors.Control;
+            this.tabTopLikedPhotos.Controls.Add(this.label1);
+            this.tabTopLikedPhotos.Controls.Add(this.listBoxTopFriends);
             this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes2);
             this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes3);
             this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes4);
@@ -760,42 +764,42 @@
             // 
             // textBoxLikes2
             // 
-            this.textBoxLikes2.Location = new System.Drawing.Point(126, 130);
+            this.textBoxLikes2.Location = new System.Drawing.Point(85, 128);
             this.textBoxLikes2.Name = "textBoxLikes2";
             this.textBoxLikes2.Size = new System.Drawing.Size(50, 20);
             this.textBoxLikes2.TabIndex = 12;
             // 
             // textBoxLikes3
             // 
-            this.textBoxLikes3.Location = new System.Drawing.Point(448, 130);
+            this.textBoxLikes3.Location = new System.Drawing.Point(407, 128);
             this.textBoxLikes3.Name = "textBoxLikes3";
             this.textBoxLikes3.Size = new System.Drawing.Size(50, 20);
             this.textBoxLikes3.TabIndex = 11;
             // 
             // textBoxLikes4
             // 
-            this.textBoxLikes4.Location = new System.Drawing.Point(52, 237);
+            this.textBoxLikes4.Location = new System.Drawing.Point(11, 235);
             this.textBoxLikes4.Name = "textBoxLikes4";
             this.textBoxLikes4.Size = new System.Drawing.Size(50, 20);
             this.textBoxLikes4.TabIndex = 10;
             // 
             // textBoxLikes5
             // 
-            this.textBoxLikes5.Location = new System.Drawing.Point(288, 228);
+            this.textBoxLikes5.Location = new System.Drawing.Point(247, 226);
             this.textBoxLikes5.Name = "textBoxLikes5";
             this.textBoxLikes5.Size = new System.Drawing.Size(50, 20);
             this.textBoxLikes5.TabIndex = 9;
             // 
             // textBoxLikes6
             // 
-            this.textBoxLikes6.Location = new System.Drawing.Point(517, 237);
+            this.textBoxLikes6.Location = new System.Drawing.Point(476, 235);
             this.textBoxLikes6.Name = "textBoxLikes6";
             this.textBoxLikes6.Size = new System.Drawing.Size(50, 20);
             this.textBoxLikes6.TabIndex = 8;
             // 
             // textBoxLikes1
             // 
-            this.textBoxLikes1.Location = new System.Drawing.Point(288, 15);
+            this.textBoxLikes1.Location = new System.Drawing.Point(247, 13);
             this.textBoxLikes1.Name = "textBoxLikes1";
             this.textBoxLikes1.Size = new System.Drawing.Size(50, 20);
             this.textBoxLikes1.TabIndex = 7;
@@ -804,7 +808,7 @@
             // 
             this.buttonGetTop.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
             this.buttonGetTop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonGetTop.Location = new System.Drawing.Point(547, 30);
+            this.buttonGetTop.Location = new System.Drawing.Point(107, 38);
             this.buttonGetTop.Name = "buttonGetTop";
             this.buttonGetTop.Size = new System.Drawing.Size(79, 43);
             this.buttonGetTop.TabIndex = 6;
@@ -814,7 +818,7 @@
             // 
             // pictureBoxTop6
             // 
-            this.pictureBoxTop6.Location = new System.Drawing.Point(392, 237);
+            this.pictureBoxTop6.Location = new System.Drawing.Point(351, 235);
             this.pictureBoxTop6.Name = "pictureBoxTop6";
             this.pictureBoxTop6.Size = new System.Drawing.Size(119, 95);
             this.pictureBoxTop6.TabIndex = 5;
@@ -822,7 +826,7 @@
             // 
             // pictureBoxTop5
             // 
-            this.pictureBoxTop5.Location = new System.Drawing.Point(256, 237);
+            this.pictureBoxTop5.Location = new System.Drawing.Point(215, 235);
             this.pictureBoxTop5.Name = "pictureBoxTop5";
             this.pictureBoxTop5.Size = new System.Drawing.Size(119, 95);
             this.pictureBoxTop5.TabIndex = 4;
@@ -830,7 +834,7 @@
             // 
             // pictureBoxTop4
             // 
-            this.pictureBoxTop4.Location = new System.Drawing.Point(108, 237);
+            this.pictureBoxTop4.Location = new System.Drawing.Point(67, 235);
             this.pictureBoxTop4.Name = "pictureBoxTop4";
             this.pictureBoxTop4.Size = new System.Drawing.Size(119, 95);
             this.pictureBoxTop4.TabIndex = 3;
@@ -838,7 +842,7 @@
             // 
             // pictureBoxTop3
             // 
-            this.pictureBoxTop3.Location = new System.Drawing.Point(323, 130);
+            this.pictureBoxTop3.Location = new System.Drawing.Point(282, 128);
             this.pictureBoxTop3.Name = "pictureBoxTop3";
             this.pictureBoxTop3.Size = new System.Drawing.Size(119, 95);
             this.pictureBoxTop3.TabIndex = 2;
@@ -846,7 +850,7 @@
             // 
             // pictureBoxTop2
             // 
-            this.pictureBoxTop2.Location = new System.Drawing.Point(182, 130);
+            this.pictureBoxTop2.Location = new System.Drawing.Point(141, 128);
             this.pictureBoxTop2.Name = "pictureBoxTop2";
             this.pictureBoxTop2.Size = new System.Drawing.Size(119, 95);
             this.pictureBoxTop2.TabIndex = 1;
@@ -854,7 +858,7 @@
             // 
             // pictureBoxTop1
             // 
-            this.pictureBoxTop1.Location = new System.Drawing.Point(256, 24);
+            this.pictureBoxTop1.Location = new System.Drawing.Point(215, 22);
             this.pictureBoxTop1.Name = "pictureBoxTop1";
             this.pictureBoxTop1.Size = new System.Drawing.Size(119, 95);
             this.pictureBoxTop1.TabIndex = 0;
@@ -1005,6 +1009,26 @@
             this.pictureBoxProfilePic.TabIndex = 1;
             this.pictureBoxProfilePic.TabStop = false;
             // 
+            // listBoxTopFriends
+            // 
+            this.listBoxTopFriends.FormattingEnabled = true;
+            this.listBoxTopFriends.Location = new System.Drawing.Point(532, 89);
+            this.listBoxTopFriends.Name = "listBoxTopFriends";
+            this.listBoxTopFriends.Size = new System.Drawing.Size(131, 134);
+            this.listBoxTopFriends.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(529, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Top Liked Friends";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1134,5 +1158,7 @@
         private System.Windows.Forms.PictureBox pictureBoxTop3;
         private System.Windows.Forms.PictureBox pictureBoxTop2;
         private System.Windows.Forms.PictureBox pictureBoxTop1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBoxTopFriends;
     }
 }

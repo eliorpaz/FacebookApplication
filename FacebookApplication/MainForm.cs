@@ -13,6 +13,7 @@ namespace FacebookApplication
     {
         private User m_FacebookUser;
         private Settings m_Settings;
+        private Dictionary<User, int> m_TopLikedFriends;
 
         public MainForm()
         {
@@ -338,7 +339,6 @@ namespace FacebookApplication
         {
             List<Photo> sortPhotos = new List<Photo>();
 
-            m_FacebookUser.ReFetch();
             try
             {
                 foreach (Album album in m_FacebookUser.Albums)
@@ -346,14 +346,76 @@ namespace FacebookApplication
                     foreach (Photo photo in album.Photos)
                     {
                         insertByLikedCountPhotos(sortPhotos, photo);
+                        insertLikedFriend(photo);
                     }
                 }
 
                 insretTop6Photo(sortPhotos);
+                insretTopLikedFriends();
+               
             }
             catch(FacebookOAuthException e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("No liked to retrieve.");
+            }
+           
+        }
+
+        private void insretTopLikedFriends()
+        {
+            List<User> topFriends = new List<User>();
+            int maxValue = 0;
+            User topLikedFriend = null;
+
+            try
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    foreach (KeyValuePair<User, int> user in m_TopLikedFriends)
+                    {
+                        if (maxValue < user.Value)
+                        {
+                            maxValue = user.Value;
+                            topLikedFriend = user.Key;
+                        }
+                    }
+
+                    maxValue = 0;
+                    topFriends.Add(topLikedFriend);
+                    m_TopLikedFriends.Remove(topLikedFriend);
+                }
+
+                foreach (User user in topFriends)
+                {
+                    listBoxTopFriends.Items.Add(user.Name);
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("No liked friends to retrieve.");
+            }
+           
+        }
+
+        private void insertLikedFriend(Photo i_Photo)
+        {
+            try
+            {
+                foreach (User user in i_Photo.LikedBy)
+                {
+                    if (m_TopLikedFriends.ContainsKey(user))
+                    {
+                        m_TopLikedFriends[user]++;
+                    }
+                    else
+                    {
+                        m_TopLikedFriends.Add(user, 1);
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("No liked friends to retrieve.");
             }
            
         }
@@ -361,6 +423,7 @@ namespace FacebookApplication
         private void insertByLikedCountPhotos(List<Photo> i_Photos, Photo i_Photo)
         {
             int index = 0;
+            Photo[] photoToAdd = { i_Photo };
 
             for (int i = 0; i < i_Photos.Count; i++)
             {
@@ -369,8 +432,8 @@ namespace FacebookApplication
                     index = i+1;
                 }
             }
-
-            i_Photos.Insert(index, i_Photo);
+            
+            i_Photos.InsertRange(index, photoToAdd);
         }
 
         private void insretTop6Photo(List<Photo> i_Photos)
