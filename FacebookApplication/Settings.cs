@@ -58,7 +58,7 @@ namespace FacebookApplication
 
         private void createXMLFile(FileMode i_Mode)
         {
-            using (Stream stream = new FileStream(@"C:\temp\FacebookSettings.xml", i_Mode))
+            using (Stream stream = new FileStream(@".\FacebookSettings.xml", i_Mode))
             {
                 XmlSerializer serializer = new XmlSerializer(this.GetType());
                 serializer.Serialize(stream, this);

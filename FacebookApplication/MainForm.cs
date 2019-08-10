@@ -7,18 +7,20 @@ using Facebook;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+
 namespace FacebookApplication
 {
     public partial class MainForm : Form
     {
         private User m_FacebookUser;
         private Settings m_Settings;
-        private bool m_chartDisplayed;
 
         public MainForm()
         {
             InitializeComponent();
-            m_chartDisplayed = false;
         }
 
         private void mainForm_Shown(object sender, EventArgs e)
@@ -50,7 +52,7 @@ namespace FacebookApplication
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             LoginResult result = FacebookService.Login(
-            "1201096130063323",
+            "1450160541956417",
             "email",
             "user_posts",
             "user_friends",
@@ -59,7 +61,8 @@ namespace FacebookApplication
             "user_events",
             "user_birthday",
             "user_location",
-            "user_gender");
+            "user_gender",
+            "user_tagged_places");
 
             m_Settings.AccessToken = result.AccessToken;
 
@@ -106,9 +109,8 @@ namespace FacebookApplication
             listBoxFriends.Items.Clear();
             listBoxPages.Items.Clear();
             listBoxMyEvents.Items.Clear();
-            reInitializeChart();
-            clearKnowYourFriends();
             makeButtonsEnabled(false);
+            reInitializeMap();
         }
 
         private void makeButtonsEnabled(bool i_IsButtonEnabled)
@@ -122,9 +124,14 @@ namespace FacebookApplication
             buttonCreateAlbum.Enabled = i_IsButtonEnabled;
             buttonDeletePost.Enabled = i_IsButtonEnabled;
             buttonUploadPhoto.Enabled = i_IsButtonEnabled;
-            buttonCountPosts.Enabled = i_IsButtonEnabled;
-            buttonClearChart.Enabled = i_IsButtonEnabled;
-            buttonKnowYourFriends.Enabled = i_IsButtonEnabled;
+            buttonShowMyPlaces.Enabled = i_IsButtonEnabled;
+            buttonClearMyPlaces.Enabled = i_IsButtonEnabled;
+            buttonShowMyPlaces.Enabled = i_IsButtonEnabled;
+            checkBoxcheckins.Enabled = i_IsButtonEnabled;
+            checkBoxTagedPlaces.Enabled = i_IsButtonEnabled;
+            checkBoxCurrentLocation.Enabled = i_IsButtonEnabled;
+
+
         }
 
         private void checkBoxRememberMe_CheckedChanged(object sender, EventArgs e)
@@ -338,144 +345,64 @@ namespace FacebookApplication
             }
         }
 
-        private void buildChart()
+        private void buildMap()
         {
-            foreach (Post post in m_FacebookUser.Posts)
-            {
-                int hour = getHour(post.UpdateTime);
-                double[] yValuesArray = new double[4];
-                yValuesArray = chartYourActivity.Series["Series1"].Points[hour].YValues;
-                yValuesArray[0]++;
-                chartYourActivity.Series["Series1"].Points[hour].YValues = yValuesArray;
-            }
-        }
+            
+            GMapOverlay markersOverlay = new GMapOverlay("markers");
+            GMap.NET.WindowsForms.Markers.GMarkerGoogle marker;
 
-        private void countPosts()
-        {
-            if (m_chartDisplayed)
+            if(checkBoxcheckins.Checked==true)
             {
-                MessageBox.Show("Please clean the chart first.");
-            }
-            else
-            {
-                buildChart();
-                m_chartDisplayed = true;
-            }
-        }
-
-        private void reInitializeChart()
-        {
-            foreach (DataPoint arr in chartYourActivity.Series["Series1"].Points)
-            {
-                arr.YValues = new double[4];
-            }
-
-            m_chartDisplayed = false;
-        }
-
-        private int getHour(DateTime? i_UpdateTime)
-        {
-            int hour = 0;
-            string strHour = i_UpdateTime.ToString();
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < strHour.Length; i++)
-            {
-                if (strHour[i] == ':')
+                foreach (Checkin checkin in m_FacebookUser.Checkins)
                 {
-                    if (!strHour[i - 2].Equals(" "))
-                    {
-                        stringBuilder.Append(strHour[i - 2]);
-                    }
-
-                    stringBuilder.Append(strHour[i - 1]);
-                    hour = Convert.ToInt32(stringBuilder.ToString());
-                    if (strHour[strHour.Length - 2].Equals('P'))
-                    {
-                        if (hour != 12)
-                        {
-                            hour += 12;
-                        }
-                    }
-                    else
-                    {
-                        if (hour == 12)
-                        {
-                            hour = 0;
-                        }
-                    }
-
-                    break;
+                    marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new PointLatLng(
+                        checkin.Place.Location.Latitude.Value, checkin.Place.Location.Longitude.Value),
+                        GMap.NET.WindowsForms.Markers.GMarkerGoogleType.green_pushpin);
+                    marker.ToolTipText = checkin.Name;
+                    markersOverlay.Markers.Add(marker);
                 }
             }
 
-            return hour;
-        }
-
-        private void knowYourFriends()
-        {
-            Dictionary<string, int> userFriendsNumberOfFriends = new Dictionary<string, int>(m_FacebookUser.Friends.Count);
-            Dictionary<string, string> userFriendsIDS = new Dictionary<string, string>();
-            int maxMutualFriends = 0;
-            List<string> listOfConnectedFriends;
-
-            foreach (User friend in m_FacebookUser.Friends)
+            if (checkBoxTagedPlaces.Checked == true)
             {
-                userFriendsNumberOfFriends.Add(friend.Id, maxMutualFriends);
-                userFriendsIDS.Add(friend.Id, friend.Name);
-            }
-
-            foreach (User friend in m_FacebookUser.Friends)
-            {
-                foreach (User friendOfFriend in friend.Friends)
+                foreach (Photo photo in m_FacebookUser.PhotosTaggedIn)
                 {
-                    if (userFriendsNumberOfFriends.ContainsKey(friendOfFriend.Id))
+                    if (photo.Place != null)
                     {
-                        userFriendsNumberOfFriends[friendOfFriend.Id]++;
-                        if (maxMutualFriends <= userFriendsNumberOfFriends[friendOfFriend.Id])
-                        {
-                            maxMutualFriends = userFriendsNumberOfFriends[friendOfFriend.Id];
-                        }
+                        marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new PointLatLng(
+                        photo.Place.Location.Latitude.Value, photo.Place.Location.Longitude.Value),
+                        GMap.NET.WindowsForms.Markers.GMarkerGoogleType.blue_pushpin);
+                        marker.ToolTipText = photo.Name;
+                        markersOverlay.Markers.Add(marker);
                     }
+
                 }
             }
-
-            listOfConnectedFriends = getlistOfConnectedFriends(userFriendsNumberOfFriends, userFriendsIDS, maxMutualFriends);
-            addItemsToListBoxKnowYourFriends(listOfConnectedFriends);
-            labelNumberOfConnectedFriendsInfo.Text = maxMutualFriends.ToString();
-        }
-
-        private List<string> getlistOfConnectedFriends(
-            Dictionary<string, int> i_UserFriendsNumberOfFriends,
-            Dictionary<string, string> i_UserFriendsIDS,
-            int i_MaxMutualFriends)
-        {
-            List<string> listOfConnectedFriends = new List<string>();
-
-            foreach (string id in i_UserFriendsNumberOfFriends.Keys)
+                
+            if(checkBoxCurrentLocation.Checked==true)
             {
-                if (i_UserFriendsNumberOfFriends[id] == i_MaxMutualFriends)
+                if (m_FacebookUser.Location.Location!= null)
                 {
-                    listOfConnectedFriends.Add(i_UserFriendsIDS[id]);
+                    marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new PointLatLng(
+                    m_FacebookUser.Location.Location.Latitude.Value, m_FacebookUser.Location.Location.Longitude.Value),
+                    GMap.NET.WindowsForms.Markers.GMarkerGoogleType.pink_pushpin);
+                    marker.ToolTipText = "My current location";
+                    markersOverlay.Markers.Add(marker);
                 }
+                    
             }
 
-            return listOfConnectedFriends;
+            map.Overlays.Add(markersOverlay);
         }
 
-        private void addItemsToListBoxKnowYourFriends(List<string> i_ListOfConnectedFriends)
+        private void reInitializeMap()
         {
-            foreach (string friendName in i_ListOfConnectedFriends)
+            foreach(GMapOverlay overlay in map.Overlays)
             {
-                listBoxKnowYourFriends.Items.Add(friendName);
+                overlay.Clear();
             }
         }
-
-        private void clearKnowYourFriends()
-        {
-            listBoxKnowYourFriends.Items.Clear();
-            labelNumberOfConnectedFriendsInfo.Text = string.Empty;
-        }
-
+        
         private void buttonRefreshPosts_Click(object sender, EventArgs e)
         {
             loadMyPosts();
@@ -557,34 +484,21 @@ namespace FacebookApplication
             loadEvents();
         }
 
-        private void buttonCountPosts_Click(object sender, EventArgs e)
+        private void buttonTaggedPlaces_Click(object sender, EventArgs e)
         {
-            countPosts();
+            buildMap();
         }
 
-        private void buttonClearChart_Click(object sender, EventArgs e)
+        private void Map_Load(object sender, EventArgs e)
         {
-            reInitializeChart();
+            map.MapProvider = GMapProviders.GoogleMap;
+            map.Position = new PointLatLng(32.046440, 34.759790);
+            map.Zoom = 10;
         }
 
-        private void buttonKnowYourFriends_Click(object sender, EventArgs e)
+        private void ButtonClearMyPlaces_Click(object sender, EventArgs e)
         {
-            knowYourFriends();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelCredit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelYourActivityTitle_Click(object sender, EventArgs e)
-        {
-
+            reInitializeMap();
         }
     }
 }

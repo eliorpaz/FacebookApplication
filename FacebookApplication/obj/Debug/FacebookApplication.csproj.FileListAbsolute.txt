@@ -24,3 +24,41 @@ C:\Users\Elior Paz\Documents\לימודים\שנה ג\DP\C19 Ex01 EliorPaz 30816
 C:\Users\Elior Paz\Documents\לימודים\שנה ג\DP\C19 Ex01 EliorPaz 308165539 NatanelMor 205788946\FacebookApplication\obj\Debug\FacebookApplication.exe
 C:\Users\Elior Paz\Documents\לימודים\שנה ג\DP\C19 Ex01 EliorPaz 308165539 NatanelMor 205788946\FacebookApplication\obj\Debug\FacebookApplication.pdb
 C:\Users\Elior Paz\Documents\לימודים\שנה ג\DP\C19 Ex01 EliorPaz 308165539 NatanelMor 205788946\FacebookApplication\obj\Debug\FacebookApplication.MainForm.resources
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.csproj.App.config
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.csprojAssemblyReference.cache
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.MainForm.resources
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.Properties.Resources.resources
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.csproj.GenerateResource.cache
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.csproj.CoreCompileInputs.cache
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.exe
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.pdb
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\FacebookApplication.exe.config
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\FacebookApplication.exe
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\FacebookApplication.pdb
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\EntityFramework.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Data.SQLite.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.IO.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Runtime.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Threading.Tasks.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\EntityFramework.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\Newtonsoft.Json.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Data.SQLite.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.IO.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Runtime.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\System.Threading.Tasks.xml
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\obj\Debug\FacebookApplication.csproj.CopyComplete
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\GMap.NET.Core.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\natanelmo\Documents\facebookApp\FacebookApplication\FacebookApplication\bin\Debug\GMap.NET.WindowsPresentation.dll
