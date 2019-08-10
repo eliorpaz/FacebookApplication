@@ -18,6 +18,8 @@ namespace FacebookApplication
         private User m_FacebookUser;
         private Settings m_Settings;
 
+        private Dictionary<User, int> m_TopLikedFriends;
+
         public MainForm()
         {
             InitializeComponent();
@@ -109,6 +111,10 @@ namespace FacebookApplication
             listBoxFriends.Items.Clear();
             listBoxPages.Items.Clear();
             listBoxMyEvents.Items.Clear();
+
+
+            clearTopLikedPhotos();
+
             makeButtonsEnabled(false);
             reInitializeMap();
         }
@@ -124,6 +130,7 @@ namespace FacebookApplication
             buttonCreateAlbum.Enabled = i_IsButtonEnabled;
             buttonDeletePost.Enabled = i_IsButtonEnabled;
             buttonUploadPhoto.Enabled = i_IsButtonEnabled;
+
             buttonShowMyPlaces.Enabled = i_IsButtonEnabled;
             buttonClearMyPlaces.Enabled = i_IsButtonEnabled;
             buttonShowMyPlaces.Enabled = i_IsButtonEnabled;
@@ -131,6 +138,8 @@ namespace FacebookApplication
             checkBoxTagedPlaces.Enabled = i_IsButtonEnabled;
             checkBoxCurrentLocation.Enabled = i_IsButtonEnabled;
 
+
+            buttonGetTop.Enabled = i_IsButtonEnabled;
 
         }
 
@@ -345,13 +354,14 @@ namespace FacebookApplication
             }
         }
 
+
         private void buildMap()
         {
-            
+
             GMapOverlay markersOverlay = new GMapOverlay("markers");
             GMap.NET.WindowsForms.Markers.GMarkerGoogle marker;
 
-            if(checkBoxcheckins.Checked==true)
+            if (checkBoxcheckins.Checked == true)
             {
                 foreach (Checkin checkin in m_FacebookUser.Checkins)
                 {
@@ -361,8 +371,8 @@ namespace FacebookApplication
                     marker.ToolTipText = checkin.Name;
                     markersOverlay.Markers.Add(marker);
                 }
-            }
 
+            }
             if (checkBoxTagedPlaces.Checked == true)
             {
                 foreach (Photo photo in m_FacebookUser.PhotosTaggedIn)
@@ -378,10 +388,9 @@ namespace FacebookApplication
 
                 }
             }
-                
-            if(checkBoxCurrentLocation.Checked==true)
+            if (checkBoxCurrentLocation.Checked == true)
             {
-                if (m_FacebookUser.Location.Location!= null)
+                if (m_FacebookUser.Location.Location != null)
                 {
                     marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new PointLatLng(
                     m_FacebookUser.Location.Location.Latitude.Value, m_FacebookUser.Location.Location.Longitude.Value),
@@ -389,7 +398,7 @@ namespace FacebookApplication
                     marker.ToolTipText = "My current location";
                     markersOverlay.Markers.Add(marker);
                 }
-                    
+
             }
 
             map.Overlays.Add(markersOverlay);
@@ -397,12 +406,63 @@ namespace FacebookApplication
 
         private void reInitializeMap()
         {
-            foreach(GMapOverlay overlay in map.Overlays)
+            foreach (GMapOverlay overlay in map.Overlays)
             {
                 overlay.Clear();
             }
         }
-        
+
+        private void insretTop6Photo(List<Photo> i_Photos)
+        {
+            try
+            {
+                pictureBoxTop1.ImageLocation = i_Photos[0].PictureThumbURL;
+                pictureBoxTop1.SizeMode = PictureBoxSizeMode.StretchImage;
+                textBoxLikes1.Text = i_Photos[0].LikedBy.Count.ToString() + " Likes";
+
+                pictureBoxTop2.ImageLocation = i_Photos[1].PictureThumbURL;
+                pictureBoxTop2.SizeMode = PictureBoxSizeMode.StretchImage;
+                textBoxLikes2.Text = i_Photos[1].LikedBy.Count.ToString() + " Likes";
+
+                pictureBoxTop3.ImageLocation = i_Photos[2].PictureThumbURL;
+                pictureBoxTop3.SizeMode = PictureBoxSizeMode.StretchImage;
+                textBoxLikes3.Text = i_Photos[2].LikedBy.Count.ToString() + " Likes";
+
+                pictureBoxTop4.ImageLocation = i_Photos[3].PictureThumbURL;
+                pictureBoxTop4.SizeMode = PictureBoxSizeMode.StretchImage;
+                textBoxLikes4.Text = i_Photos[3].LikedBy.Count.ToString() + " Likes";
+
+                pictureBoxTop5.ImageLocation = i_Photos[4].PictureThumbURL;
+                pictureBoxTop5.SizeMode = PictureBoxSizeMode.StretchImage;
+                textBoxLikes5.Text = i_Photos[4].LikedBy.Count.ToString() + " Likes";
+
+                pictureBoxTop6.ImageLocation = i_Photos[5].PictureThumbURL;
+                pictureBoxTop6.SizeMode = PictureBoxSizeMode.StretchImage;
+                textBoxLikes6.Text = i_Photos[5].LikedBy.Count.ToString() + " Likes";
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+
+        private void clearTopLikedPhotos()
+        {
+            pictureBoxTop1.ImageLocation = null;
+            pictureBoxTop2.ImageLocation = null;
+            pictureBoxTop3.ImageLocation = null;
+            pictureBoxTop4.ImageLocation = null;
+            pictureBoxTop5.ImageLocation = null;
+            pictureBoxTop6.ImageLocation = null;
+
+            textBoxLikes1.Text = string.Empty;
+            textBoxLikes2.Text = string.Empty;
+            textBoxLikes3.Text = string.Empty;
+            textBoxLikes4.Text = string.Empty;
+            textBoxLikes5.Text = string.Empty;
+            textBoxLikes6.Text = string.Empty;
+        }
+
         private void buttonRefreshPosts_Click(object sender, EventArgs e)
         {
             loadMyPosts();
@@ -499,6 +559,115 @@ namespace FacebookApplication
         private void ButtonClearMyPlaces_Click(object sender, EventArgs e)
         {
             reInitializeMap();
+        }
+
+        private void buttonGetTop_Click(object sender, EventArgs e)
+        {
+            topLikedPhotos();
+            
+    
+        }
+
+        private void topLikedPhotos()
+        {
+            List<Photo> sortPhotos = new List<Photo>();
+
+            try
+            {
+                foreach (Album album in m_FacebookUser.Albums)
+                {
+                    foreach (Photo photo in album.Photos)
+                    {
+                        insertByLikedCountPhotos(sortPhotos, photo);
+                        insertLikedFriend(photo);
+                    }
+                }
+
+                insretTop6Photo(sortPhotos);
+                insretTopLikedFriends();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No liked to retrieve.");
+            }
+
+        }
+
+        private void insretTopLikedFriends()
+        {
+            List<User> topFriends = new List<User>();
+            int maxValue = 0;
+            User topLikedFriend = null;
+
+            try
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    foreach (KeyValuePair<User, int> user in m_TopLikedFriends)
+                    {
+                        if (maxValue < user.Value)
+                        {
+                            maxValue = user.Value;
+                            topLikedFriend = user.Key;
+                        }
+                    }
+
+                    maxValue = 0;
+                    topFriends.Add(topLikedFriend);
+                    m_TopLikedFriends.Remove(topLikedFriend);
+                    foreach (User user in topFriends)
+                    {
+                        listBoxTopFriends.Items.Add(user.Name);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // MessageBox.Show("No liked friends to retrieve.");
+                throw;
+            }
+
+        }
+
+        private void insertLikedFriend(Photo i_Photo)
+        {
+            try
+            {
+                foreach (User user in i_Photo.LikedBy)
+                {
+                    if (m_TopLikedFriends.ContainsKey(user))
+                    {
+                        m_TopLikedFriends[user]++;
+                    }
+                    else
+                    {
+                        m_TopLikedFriends.Add(user, 1);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("No liked friends to retrieve.");
+                throw;
+            }
+
+        }
+
+        private void insertByLikedCountPhotos(List<Photo> i_Photos, Photo i_Photo)
+        {
+            int index = 0;
+            Photo[] photoToAdd = { i_Photo };
+
+            for (int i = 0; i < i_Photos.Count; i++)
+            {
+                if (i_Photo.LikedBy.Count <= i_Photos[i].LikedBy.Count)
+                {
+                    index = i + 1;
+                }
+                i_Photos.InsertRange(index, photoToAdd);
+            }
+
         }
     }
 }

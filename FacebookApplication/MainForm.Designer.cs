@@ -85,6 +85,23 @@
             this.buttonShowMyPlaces = new System.Windows.Forms.Button();
             this.labelTaggedPlacesTitle = new System.Windows.Forms.Label();
             this.labelNumberOfConnectedFriendsInfo = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.labelYourActivityTitle = new System.Windows.Forms.Label();
+            this.tabTopLikedPhotos = new System.Windows.Forms.TabPage();
+            this.textBoxLikes2 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes3 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes4 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes5 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes6 = new System.Windows.Forms.TextBox();
+            this.textBoxLikes1 = new System.Windows.Forms.TextBox();
+            this.buttonGetTop = new System.Windows.Forms.Button();
+            this.pictureBoxTop6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTop1 = new System.Windows.Forms.PictureBox();
             this.labelGenderInfo = new System.Windows.Forms.Label();
             this.labelBirthdayInfo = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
@@ -99,6 +116,8 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBoxProfilePic = new System.Windows.Forms.PictureBox();
+            this.listBoxTopFriends = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFacebookLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -114,6 +133,13 @@
             this.tabEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).BeginInit();
             this.tabTaggedPlaces.SuspendLayout();
+            this.tabTopLikedPhotos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePic)).BeginInit();
             this.SuspendLayout();
@@ -183,6 +209,7 @@
             this.buttonLoginLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLoginLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonLoginLogout.Location = new System.Drawing.Point(6, 146);
+            this.buttonLoginLogout.Location = new System.Drawing.Point(6, 147);
             this.buttonLoginLogout.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLoginLogout.Name = "buttonLoginLogout";
             this.buttonLoginLogout.Size = new System.Drawing.Size(131, 35);
@@ -208,6 +235,7 @@
             this.tabControl.Controls.Add(this.tabPageLikes);
             this.tabControl.Controls.Add(this.tabEvents);
             this.tabControl.Controls.Add(this.tabTaggedPlaces);
+            this.tabControl.Controls.Add(this.tabTopLikedPhotos);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Margin = new System.Windows.Forms.Padding(2);
@@ -383,6 +411,7 @@
             // 
             this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxPhoto.Location = new System.Drawing.Point(373, 31);
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(373, 34);
             this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
             this.pictureBoxPhoto.Size = new System.Drawing.Size(290, 290);
@@ -673,12 +702,13 @@
             // 
             // listBoxMyEvents
             // 
-            this.listBoxMyEvents.FormattingEnabled = true;
-            this.listBoxMyEvents.Location = new System.Drawing.Point(44, 57);
-            this.listBoxMyEvents.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxMyEvents.Name = "listBoxMyEvents";
-            this.listBoxMyEvents.Size = new System.Drawing.Size(378, 186);
-            this.listBoxMyEvents.TabIndex = 1;
+            this.pictureBoxCalendar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBoxCalendar.Image = global::FacebookApplication.Properties.Resources.calender;
+            this.pictureBoxCalendar.Location = new System.Drawing.Point(437, 84);
+            this.pictureBoxCalendar.Name = "pictureBoxCalendar";
+            this.pictureBoxCalendar.Size = new System.Drawing.Size(123, 125);
+            this.pictureBoxCalendar.TabIndex = 3;
+            this.pictureBoxCalendar.TabStop = false;
             // 
             // tabTaggedPlaces
             // 
@@ -803,6 +833,182 @@
             this.labelNumberOfConnectedFriendsInfo.Name = "labelNumberOfConnectedFriendsInfo";
             this.labelNumberOfConnectedFriendsInfo.Size = new System.Drawing.Size(0, 13);
             this.labelNumberOfConnectedFriendsInfo.TabIndex = 5;
+            // buttonLoadEvents
+            // 
+            this.buttonLoadEvents.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonLoadEvents.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLoadEvents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoadEvents.Enabled = false;
+            this.buttonLoadEvents.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonLoadEvents.Location = new System.Drawing.Point(176, 248);
+            this.buttonLoadEvents.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLoadEvents.Name = "buttonLoadEvents";
+            this.buttonLoadEvents.Size = new System.Drawing.Size(113, 27);
+            this.buttonLoadEvents.TabIndex = 2;
+            this.buttonLoadEvents.Text = "Load Events";
+            this.buttonLoadEvents.UseVisualStyleBackColor = true;
+            this.buttonLoadEvents.Click += new System.EventHandler(this.buttonLoadEvents_Click);
+            // 
+            // listBoxMyEvents
+            // 
+            this.listBoxMyEvents.FormattingEnabled = true;
+            this.listBoxMyEvents.Location = new System.Drawing.Point(44, 57);
+            this.listBoxMyEvents.Margin = new System.Windows.Forms.Padding(2);
+            this.listBoxMyEvents.Name = "listBoxMyEvents";
+            this.listBoxMyEvents.Size = new System.Drawing.Size(378, 186);
+            this.listBoxMyEvents.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(37, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(113, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(288, 32);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(370, 282);
+            this.webBrowser1.TabIndex = 4;
+            // 
+            // labelYourActivityTitle
+            // 
+            this.labelYourActivityTitle.AutoSize = true;
+            this.labelYourActivityTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYourActivityTitle.Location = new System.Drawing.Point(272, 5);
+            this.labelYourActivityTitle.Name = "labelYourActivityTitle";
+            this.labelYourActivityTitle.Size = new System.Drawing.Size(134, 24);
+            this.labelYourActivityTitle.TabIndex = 3;
+            this.labelYourActivityTitle.Text = "elior the kaka";
+            // 
+            // tabTopLikedPhotos
+            // 
+            this.tabTopLikedPhotos.BackColor = System.Drawing.SystemColors.Control;
+            this.tabTopLikedPhotos.Controls.Add(this.label1);
+            this.tabTopLikedPhotos.Controls.Add(this.listBoxTopFriends);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes2);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes3);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes4);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes5);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes6);
+            this.tabTopLikedPhotos.Controls.Add(this.textBoxLikes1);
+            this.tabTopLikedPhotos.Controls.Add(this.buttonGetTop);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop6);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop5);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop4);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop3);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop2);
+            this.tabTopLikedPhotos.Controls.Add(this.pictureBoxTop1);
+            this.tabTopLikedPhotos.Location = new System.Drawing.Point(4, 22);
+            this.tabTopLikedPhotos.Name = "tabTopLikedPhotos";
+            this.tabTopLikedPhotos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTopLikedPhotos.Size = new System.Drawing.Size(682, 335);
+            this.tabTopLikedPhotos.TabIndex = 7;
+            this.tabTopLikedPhotos.Text = "Top Liked Photos";
+            // 
+            // textBoxLikes2
+            // 
+            this.textBoxLikes2.Location = new System.Drawing.Point(85, 128);
+            this.textBoxLikes2.Name = "textBoxLikes2";
+            this.textBoxLikes2.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes2.TabIndex = 12;
+            // 
+            // textBoxLikes3
+            // 
+            this.textBoxLikes3.Location = new System.Drawing.Point(407, 128);
+            this.textBoxLikes3.Name = "textBoxLikes3";
+            this.textBoxLikes3.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes3.TabIndex = 11;
+            // 
+            // textBoxLikes4
+            // 
+            this.textBoxLikes4.Location = new System.Drawing.Point(11, 235);
+            this.textBoxLikes4.Name = "textBoxLikes4";
+            this.textBoxLikes4.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes4.TabIndex = 10;
+            // 
+            // textBoxLikes5
+            // 
+            this.textBoxLikes5.Location = new System.Drawing.Point(247, 226);
+            this.textBoxLikes5.Name = "textBoxLikes5";
+            this.textBoxLikes5.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes5.TabIndex = 9;
+            // 
+            // textBoxLikes6
+            // 
+            this.textBoxLikes6.Location = new System.Drawing.Point(476, 235);
+            this.textBoxLikes6.Name = "textBoxLikes6";
+            this.textBoxLikes6.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes6.TabIndex = 8;
+            // 
+            // textBoxLikes1
+            // 
+            this.textBoxLikes1.Location = new System.Drawing.Point(247, 13);
+            this.textBoxLikes1.Name = "textBoxLikes1";
+            this.textBoxLikes1.Size = new System.Drawing.Size(50, 20);
+            this.textBoxLikes1.TabIndex = 7;
+            // 
+            // buttonGetTop
+            // 
+            this.buttonGetTop.BackgroundImage = global::FacebookApplication.Properties.Resources.button_bg;
+            this.buttonGetTop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonGetTop.Location = new System.Drawing.Point(107, 38);
+            this.buttonGetTop.Name = "buttonGetTop";
+            this.buttonGetTop.Size = new System.Drawing.Size(79, 43);
+            this.buttonGetTop.TabIndex = 6;
+            this.buttonGetTop.Text = "Get Top Liked Photos";
+            this.buttonGetTop.UseVisualStyleBackColor = true;
+            this.buttonGetTop.Click += new System.EventHandler(this.buttonGetTop_Click);
+            // 
+            // pictureBoxTop6
+            // 
+            this.pictureBoxTop6.Location = new System.Drawing.Point(351, 235);
+            this.pictureBoxTop6.Name = "pictureBoxTop6";
+            this.pictureBoxTop6.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop6.TabIndex = 5;
+            this.pictureBoxTop6.TabStop = false;
+            // 
+            // pictureBoxTop5
+            // 
+            this.pictureBoxTop5.Location = new System.Drawing.Point(215, 235);
+            this.pictureBoxTop5.Name = "pictureBoxTop5";
+            this.pictureBoxTop5.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop5.TabIndex = 4;
+            this.pictureBoxTop5.TabStop = false;
+            // 
+            // pictureBoxTop4
+            // 
+            this.pictureBoxTop4.Location = new System.Drawing.Point(67, 235);
+            this.pictureBoxTop4.Name = "pictureBoxTop4";
+            this.pictureBoxTop4.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop4.TabIndex = 3;
+            this.pictureBoxTop4.TabStop = false;
+            // 
+            // pictureBoxTop3
+            // 
+            this.pictureBoxTop3.Location = new System.Drawing.Point(282, 128);
+            this.pictureBoxTop3.Name = "pictureBoxTop3";
+            this.pictureBoxTop3.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop3.TabIndex = 2;
+            this.pictureBoxTop3.TabStop = false;
+            // 
+            // pictureBoxTop2
+            // 
+            this.pictureBoxTop2.Location = new System.Drawing.Point(141, 128);
+            this.pictureBoxTop2.Name = "pictureBoxTop2";
+            this.pictureBoxTop2.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop2.TabIndex = 1;
+            this.pictureBoxTop2.TabStop = false;
+            // 
+            // pictureBoxTop1
+            // 
+            this.pictureBoxTop1.Location = new System.Drawing.Point(215, 22);
+            this.pictureBoxTop1.Name = "pictureBoxTop1";
+            this.pictureBoxTop1.Size = new System.Drawing.Size(119, 95);
+            this.pictureBoxTop1.TabIndex = 0;
+            this.pictureBoxTop1.TabStop = false;
             // 
             // labelGenderInfo
             // 
@@ -949,6 +1155,26 @@
             this.pictureBoxProfilePic.TabIndex = 1;
             this.pictureBoxProfilePic.TabStop = false;
             // 
+            // listBoxTopFriends
+            // 
+            this.listBoxTopFriends.FormattingEnabled = true;
+            this.listBoxTopFriends.Location = new System.Drawing.Point(532, 89);
+            this.listBoxTopFriends.Name = "listBoxTopFriends";
+            this.listBoxTopFriends.Size = new System.Drawing.Size(131, 134);
+            this.listBoxTopFriends.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(529, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Top Liked Friends";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -983,6 +1209,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCalendar)).EndInit();
             this.tabTaggedPlaces.ResumeLayout(false);
             this.tabTaggedPlaces.PerformLayout();
+            this.tabTopLikedPhotos.ResumeLayout(false);
+            this.tabTopLikedPhotos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePic)).EndInit();
@@ -1061,5 +1295,24 @@
         private System.Windows.Forms.CheckBox checkBoxCurrentLocation;
         private System.Windows.Forms.CheckBox checkBoxTagedPlaces;
         private System.Windows.Forms.CheckBox checkBoxcheckins;
+        private System.Windows.Forms.TabPage tabTopLikedPhotos;
+        private System.Windows.Forms.Label labelYourActivityTitle;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.TextBox textBoxLikes2;
+        private System.Windows.Forms.TextBox textBoxLikes3;
+        private System.Windows.Forms.TextBox textBoxLikes4;
+        private System.Windows.Forms.TextBox textBoxLikes5;
+        private System.Windows.Forms.TextBox textBoxLikes6;
+        private System.Windows.Forms.TextBox textBoxLikes1;
+        private System.Windows.Forms.Button buttonGetTop;
+        private System.Windows.Forms.PictureBox pictureBoxTop6;
+        private System.Windows.Forms.PictureBox pictureBoxTop5;
+        private System.Windows.Forms.PictureBox pictureBoxTop4;
+        private System.Windows.Forms.PictureBox pictureBoxTop3;
+        private System.Windows.Forms.PictureBox pictureBoxTop2;
+        private System.Windows.Forms.PictureBox pictureBoxTop1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBoxTopFriends;
     }
 }
